@@ -23,6 +23,7 @@
         <module>ainalyzer-input</module>
         <module>ainalyzer-output</module>
         <module>ainalyzer-application</module>
+        <module>ainalyzer-contracts</module>
     </modules>
 
     <properties>
@@ -33,6 +34,8 @@
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
         <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+        <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
 
         <!-- Compilation Flags -->
         <disablePluginsVerifications>false</disablePluginsVerifications>
@@ -44,9 +47,19 @@
         <jacoco.methodRatio>0.8</jacoco.methodRatio>
         <jacoco.branchRatio>0.8</jacoco.branchRatio>
         <jacoco.complexityRatio>0.8</jacoco.complexityRatio>
+
+        <!-- Dependencies -->
+        <protobuf-java.version>3.25.5</protobuf-java.version>
     </properties>
 
     <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>

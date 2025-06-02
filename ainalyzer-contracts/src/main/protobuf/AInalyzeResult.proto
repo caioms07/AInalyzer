@@ -1,0 +1,14 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package com.example.ainalizer.contracts;
+
+import "google/protobuf/wrappers.proto";
+
+message AInalyzeResult {
+  google.protobuf.StringValue messageId = 1;
+  google.protobuf.StringValue author = 2;
+  google.protobuf.StringValue originalMessage = 3;
+  google.protobuf.BoolValue success = 4;
+  google.protobuf.StringValue reason = 5;
+}
