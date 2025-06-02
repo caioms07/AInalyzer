@@ -5,9 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AinalyzerApplication {
+    protected AinalyzerApplication() {
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(AinalyzerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AinalyzerApplication.class, args);
+    }
 
 }
