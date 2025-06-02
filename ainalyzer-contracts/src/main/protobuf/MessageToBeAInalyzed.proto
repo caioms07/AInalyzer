@@ -1,0 +1,12 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package com.example.ainalizer.contracts;
+
+import "google/protobuf/wrappers.proto";
+
+message MessageToBeAInalyzed {
+  google.protobuf.StringValue messageId = 1;
+  google.protobuf.StringValue author = 2;
+  google.protobuf.StringValue message = 3;
+}
