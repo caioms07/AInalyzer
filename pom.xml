@@ -50,6 +50,8 @@
 
         <!-- Dependencies -->
         <protobuf-java.version>3.25.5</protobuf-java.version>
+        <spring-kafka.version>3.3.1</spring-kafka.version>
+        <kafka-clients.version>3.9.1</kafka-clients.version>
     </properties>
 
     <dependencyManagement>
@@ -58,6 +60,16 @@
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobuf-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka-clients.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -116,12 +128,13 @@
                         <requireProfileIdsExist/>
                         <requireReleaseDeps>
                             <excludes>
-                                <!-- Exclude BLC modules from this requirement to enable SNAPSHOT parent referencing -->
+                                <!-- Exclude ainalyzer modules from this requirement to enable SNAPSHOT parent referencing -->
                                 <exclude>com.example:ainalyzer:*</exclude>
                                 <exclude>com.example:ainalyzer-application:*</exclude>
                                 <exclude>com.example:ainalyzer-core:*</exclude>
                                 <exclude>com.example:ainalyzer-input:*</exclude>
                                 <exclude>com.example:ainalyzer-output:*</exclude>
+                                <exclude>com.example:ainalyzer-contracts:*</exclude>
                             </excludes>
                         </requireReleaseDeps>
                     </rules>
@@ -242,6 +255,8 @@
                             <excludes>
                                 <!-- Exclude classes that we cannot test such as Launcher and Spring Configuration -->
                                 <exclude>com/example/ainalyzer/application/AinalyzerApplication.class</exclude>
+                                <!-- Exclude SerDes classes -->
+                                <exclude>com/example/ainalyzer/input/consumer/deserializer/MessageToBeAInalyzedDeserializer.class</exclude>
                             </excludes>
                         </configuration>
                     </execution>
@@ -254,9 +269,9 @@
                 <configuration>
                     <!--
                         This comes from spring-boot-starter-parent, but it should be disabled for all modules
-                        unless blc-application which is the module containing the entry point class tagged
+                        unless ainalyzer-application which is the module containing the entry point class tagged
                         with the SpringBootApplication annotation. We disable it here for all modules by default
-                        and override this configuration only on the blc-application module.
+                        and override this configuration only on the ainalyzer-application module.
                     -->
                     <skip>true</skip>
                 </configuration>
