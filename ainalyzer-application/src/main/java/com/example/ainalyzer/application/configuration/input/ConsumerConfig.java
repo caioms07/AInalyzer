@@ -1,8 +1,8 @@
 package com.example.ainalyzer.application.configuration.input;
 
 import com.example.ainalizer.contracts.MessageToBeAInalyzed;
+import com.example.ainalyzer.core.handler.MessageToBeAInalyzedHandler;
 import com.example.ainalyzer.input.consumer.MessageToBeAInalyzedKafkaConsumer;
-import com.example.ainalyzer.input.handler.MessageToBeAInalyzedHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;

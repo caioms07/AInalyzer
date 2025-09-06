@@ -1,7 +1,7 @@
 package com.example.ainalyzer.input.consumer;
 
 import com.example.ainalizer.contracts.MessageToBeAInalyzed;
-import com.example.ainalyzer.input.handler.MessageToBeAInalyzedHandler;
+import com.example.ainalyzer.core.handler.MessageToBeAInalyzedHandler;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

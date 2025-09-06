@@ -1,4 +1,4 @@
-package com.example.ainalyzer.input.handler;
+package com.example.ainalyzer.core.handler;
 
 import com.example.ainalizer.contracts.MessageToBeAInalyzed;
 import org.junit.jupiter.api.Test;
