@@ -1,6 +1,6 @@
-package com.example.ainalyzer.application.configuration.input;
+package com.example.ainalyzer.application.configuration.core;
 
-import com.example.ainalyzer.input.handler.MessageToBeAInalyzedHandler;
+import com.example.ainalyzer.core.handler.MessageToBeAInalyzedHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
