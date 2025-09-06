@@ -175,6 +175,7 @@
                     <ignoredUnusedDeclaredDependencies>
                         <dependency>org.springframework.boot:spring-boot-starter</dependency>
                         <dependency>org.springframework.boot:spring-boot-starter-test</dependency>
+                        <dependency>org.springframework:spring-beans</dependency>
                         <!-- Dependencies required for code generation libraries -->
                         <dependency>org.mapstruct:mapstruct-processor</dependency>
                         <dependency>org.projectlombok:lombok</dependency>
@@ -278,6 +279,8 @@
                                 <exclude>com/example/ainalyzer/application/AinalyzerApplication.class</exclude>
                                 <!-- Exclude SerDes classes -->
                                 <exclude>com/example/ainalyzer/input/consumer/deserializer/MessageToBeAInalyzedDeserializer.class</exclude>
+                                <!-- Exclude Mapstruct converters -->
+                                <exclude>com/example/ainalyzer/core/mapper/MessageToBeAInalyzedConverterImpl.class</exclude>
                             </excludes>
                         </configuration>
                     </execution>
