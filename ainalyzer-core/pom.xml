@@ -13,6 +13,13 @@
     <artifactId>ainalyzer-core</artifactId>
 
     <dependencies>
+        <!-- Internal Dependencies -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>ainalyzer-contracts</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- External Dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
