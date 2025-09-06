@@ -1,15 +1,17 @@
 package com.example.ainalyzer.input.handler;
 
 import com.example.ainalizer.contracts.MessageToBeAInalyzed;
+import com.example.ainalyzer.core.driver.MessageToBeAInalyzedHandlerPort;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Component;
+import lombok.extern.slf4j.Slf4j;
 
-@Component
+@Slf4j
 @AllArgsConstructor
-public class MessageToBeAInalyzedHandler {
+public class MessageToBeAInalyzedHandler implements MessageToBeAInalyzedHandlerPort {
 
+    @Override
     public void handle(MessageToBeAInalyzed messageToBeAInalyzed) {
-        System.out.printf("Message to be ainalyzed: %s\n, %s\n, %s\n",
+        log.debug("Message to be ainalyzed: {}, {}, {}",
                 messageToBeAInalyzed.getMessageId().getValue(),
                 messageToBeAInalyzed.getAuthor().getValue(),
                 messageToBeAInalyzed.getMessage().getValue());
